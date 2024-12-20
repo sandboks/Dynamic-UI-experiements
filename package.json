@@ -4,7 +4,9 @@
   "description": "https://www.theodinproject.com/lessons/node-path-javascript-dynamic-user-interface-interactions",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "build": "webpack",
+      "dev": "webpack serve",
+      "deploy": "git checkout gh-pages && git merge main --no-edit && npx webpack && git add dist -f && git commit -m 'Deployment commit' && git subtree push --prefix dist origin gh-pages && git checkout main"
   },
   "keywords": [],
   "author": "",
