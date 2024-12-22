@@ -1,6 +1,11 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
 }
+
+/*
+NAVIGATION BAR WITH DROPDOWN
+*/
 
 .navbar {
     display: flex;
@@ -53,3 +58,50 @@ li {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+/* 
+IMAGE CAROUSEL 
+*/
+
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+.carouselRoot {
+    display: flex;
+    align-items: center;
+}
+
+.carouselArrow {
+    height: 100%;
+    align-items: center;
+    display: flex;
+    padding: 1em;
+    box-sizing: border-box;
+    user-select: none;
+    cursor: pointer;
+}
+
+.carouselArrow:hover {
+    background-color: silver;
+}
+
+.carouselImages {
+    display: flex;
+    transform: translate(-1500px, 0px);
+}
+
+.carouselWindowCrop, .carouselImages img {
+    width: 500px;
+    width: 1000px;
+    display: block;
+}
+
+.carouselWindowCrop {
+    overflow: hidden;
+}
+
+
+
+
