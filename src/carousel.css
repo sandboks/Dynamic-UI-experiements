@@ -1,0 +1,90 @@
+:root {
+    --colorDotActive: #d2d2d2;
+
+    --ArrowButtonPadding: -1.25em;
+
+    --SlideChangeDuration: 300ms;
+}
+
+/* 
+IMAGE CAROUSEL 
+*/
+
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+.carouselWindow {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.carouselArrow {
+    align-items: center;
+    display: flex;
+    padding: 1em;
+    box-sizing: border-box;
+    user-select: none;
+    cursor: pointer;
+
+    background-color: silver;
+    border-radius: 1em;
+
+    position: absolute;
+    z-index: 1;
+}
+
+.carouselArrow#leftArrow {
+    left: var(--ArrowButtonPadding);
+}
+
+.carouselArrow#rightArrow {
+    right: var(--ArrowButtonPadding);
+}
+
+.carouselArrow:hover {
+    background-color: var(--colorDotActive);
+}
+
+.carouselImages {
+    display: flex;
+    transform: translate(0px, 0px);
+    transition: var(--SlideChangeDuration);
+}
+
+.carouselWindowCrop, .carouselImages img {
+    width: 500px;
+    width: 1000px;
+    display: block;
+}
+
+.carouselWindowCrop {
+    overflow: hidden;
+}
+
+/*
+CAROUSEL DOTS
+*/
+
+.carouselDotSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    padding: 1em;
+}
+
+.carouselDot {
+    aspect-ratio: 1 / 1;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.carouselDot.carouselDotACTIVE {
+    background-color: var(--colorDotActive);
+    cursor: auto;
+}
