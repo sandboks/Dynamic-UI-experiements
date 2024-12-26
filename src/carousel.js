@@ -22,6 +22,13 @@ export const Carousel = (function () {
         });
 
         SetArrowButtons();
+
+        for (let i = 0; i < CarouselDots.length; i++) {
+            let dot = CarouselDots[i];
+            dot.addEventListener('click', () => {
+                ChangeToSlide(i);
+            });
+        }
     }
 
     function ChangeSlideBy(delta) {
@@ -30,6 +37,12 @@ export const Carousel = (function () {
         CarouselImages.style.transform = `translate(-${currentSlideIndex * panelWidth}px, 0px)`;
         CarouselDots[currentSlideIndex].classList.add("carouselDotACTIVE");
         SetArrowButtons();
+    }
+
+    function ChangeToSlide(i) {
+        if (currentSlideIndex == i)
+            return;
+        ChangeSlideBy(i - currentSlideIndex);
     }
 
     function SetArrowButtons() {
